@@ -1,0 +1,31 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- Загальні властивості -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Solution Condition="'$(Solution)' == ''"></Solution>
+  </PropertyGroup>
+
+  <!-- Визначення основного проекту та тестового проекту -->
+  <ItemGroup Condition="'$(Solution)' != ''">
+    <MainProjectFile Include="$(Solution)\$(Solution).csproj" />
+    <TestProjectFile Include="$(Solution).Tests\$(Solution).Tests.csproj" />
+  </ItemGroup>
+
+  <!-- Ціль для побудови проектів -->
+  <Target Name="Build">
+    <MSBuild Projects="@(MainProjectFile);@(TestProjectFile)" Targets="Restore;Build" />
+  </Target>
+
+  <!-- Ціль для тестування проектів -->
+  <Target Name="Test" DependsOnTargets="Build">
+    <Exec Command="dotnet test @(TestProjectFile) --logger &quot;console;verbosity=detailed&quot;" />
+  </Target>
+
+  <!-- Ціль для запуску основного проекту -->
+  <Target Name="Run" DependsOnTargets="Build">
+    <Exec Command="dotnet run --project &quot;@(MainProjectFile)&quot;" />
+  </Target>
+  
+</Project>
+
