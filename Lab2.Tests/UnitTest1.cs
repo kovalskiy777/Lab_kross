@@ -65,7 +65,7 @@ namespace Lab2.Tests
             string lines = "500 500";
             string expected = "0";
 
-            string result = Program.ProcessLab1(lines);
+            string result = Program.ProcessLab2(lines);
 
             Assert.Equal(expected, result);
         }

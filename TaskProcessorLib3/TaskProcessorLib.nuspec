@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<package>
+    <metadata>
+        <id>AKovalskyi</id>
+        <version>1.0.0</version>
+        <authors>Artem Kovalskyi</authors>
+        <description>Task Processor Library</description>
+        <dependencies>
+        </dependencies>
+    </metadata>
+</package>

@@ -21,7 +21,7 @@ namespace Lab2
                 StringBuilder result = new StringBuilder();
                 foreach (var line in lines)
                 {
-                    result.AppendLine(ProcessLab1(line));
+                    result.AppendLine(ProcessLab2(line));
                 }
 
                 File.WriteAllText(outputFilePath, result.ToString().Trim());
@@ -55,7 +55,7 @@ namespace Lab2
             }
         }
 
-        public static string ProcessLab1(string line)
+        public static string ProcessLab2(string line)
         {
             string[] parts = line.Split();
             int N = int.Parse(parts[0]);
