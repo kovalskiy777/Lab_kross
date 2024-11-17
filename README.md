@@ -40,3 +40,4 @@ cd TaskProcessorApp
 dotnet add package AKovalskyi --source ../NugetLocalRepo
 dotnet run
 ```
+![image](https://github.com/user-attachments/assets/dd6f9d54-a1e9-4103-a881-c7857851d41e)
