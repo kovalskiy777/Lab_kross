@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Update and upgrade the system
+sudo apt-get update
+sudo apt-get upgrade -y
+
+# Install dependencies
+sudo apt-get install -y wget apt-transport-https software-properties-common
+
+# Add Microsoft package repository
+wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb
+
+# Install .NET SDK 8.0
+sudo apt-get update
+sudo apt-get install -y dotnet-sdk-8.0
+
+dotnet nuget add source http://192.168.56.1:8080/v3/index.json -n Baget
+dotnet tool install --global Lab4 --version 1.0.0
+
+# Verify installation
+dotnet --version
+
+# Navigate to the project directory
+cd /home/vagrant/project
+
+echo "Ubuntu environment setup complete and LAB4 executed"
