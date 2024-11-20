@@ -69,10 +69,9 @@ namespace Lab4
 
                 string result = TaskProcessorLib.TaskProcessor.ProcessTask(lines); 
 
-                File.WriteAllText(outputFile, result.Trim()); 
+                File.WriteAllText(outputFile, result.Trim());
 
-                Console.WriteLine("File OUTPUT.TXT successfully created");
-                Console.WriteLine("LAB #1");
+                Console.WriteLine("Lab2");
                 Console.WriteLine("Input data:");
                 Console.WriteLine(string.Join(Environment.NewLine, lines).Trim());
                 Console.WriteLine("Output data:");

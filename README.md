@@ -40,3 +40,5 @@ cd TaskProcessorApp
 dotnet add package AKovalskyi --source ../NugetLocalRepo
 dotnet run
 ```
+
+# Lab4
